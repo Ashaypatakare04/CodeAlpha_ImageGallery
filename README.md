@@ -156,21 +156,6 @@ No installation, build tools, or servers required:
 - **Intern Name**: Ashay Patakare
 - **GitHub Repository**: [Ashaypatakare04/CodeAlpha_ImageGallery](https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery)
 
-### Requirements Verification Checklist
-
-| Requirement | Implementation Status |
-| :--- | :---: |
-| 1. Design an image gallery using HTML and CSS | ✅ Complete (Editorial design with warm palette & CSS Grid) |
-| 2. Use JavaScript for image navigation | ✅ Complete (Circular wrapping, preloading, smooth fade) |
-| 3. Add Previous and Next buttons | ✅ Complete (On-screen buttons, arrow keys, touch swipes) |
-| 4. Full-screen lightbox/modal view on click | ✅ Complete (Nocturnal overlay, counter, zoom, fullscreen) |
-| 5. Hover effects on gallery images | ✅ Complete (Restrained 1.03 scale zoom, arrow reveal) |
-| 6. Smooth transitions and animations | ✅ Complete (300-500ms easing, respecting reduced motion) |
-| 7. Responsive for desktop, tablet, and mobile | ✅ Complete (Custom breakpoints, touch-first mobile UX) |
-| 8. Category filters (bonus feature) | ✅ Complete (8 Tabs: All, Nature, Arch, People, Travel, Portraits, Abstract, Urban) |
-| 9. Filter-Aware Lightbox Navigation | ✅ Complete (Cycles strictly within active filtered subset) |
-| 10. Dark Mode & Theme Toggle | ✅ Complete (Instant switch, persisted in localStorage) |
-
 ---
 
 ## 📄 License
