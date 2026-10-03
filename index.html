@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeAlpha Image Gallery — An interactive, responsive, portfolio-grade photography gallery featuring category filtering, smooth animations, and full-screen lightbox navigation.">
+  <meta name="keywords" content="CodeAlpha, Frontend Development, Image Gallery, JavaScript Lightbox, CSS Grid, Responsive Web Design">
+  <meta name="author" content="Ashay Patakare">
+  <title>CodeAlpha Image Gallery — Visual Perspectives Showcase</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <a href="#hero" class="brand-logo" aria-label="CodeAlpha Image Gallery Home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="m14.31 8 5.74 9.94"></path>
+            <path d="M9.69 8h11.48"></path>
+            <path d="m7.38 12 5.74-9.94"></path>
+            <path d="M9.69 16 3.95 6.06"></path>
+            <path d="M14.31 16H2.83"></path>
+            <path d="m16.62 12-5.74 9.94"></path>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>LUMEN</strong>
+          <span class="brand-sub">GALLERY</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <span class="task-badge">
+          <span class="badge-dot"></span>
+          CodeAlpha Task 1
+        </span>
+        <a href="#gallery-section" class="nav-link">Explore</a>
+        <a href="https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery" target="_blank" rel="noopener noreferrer" class="btn-github" aria-label="View Project on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>Repository</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+    
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-pill">Frontend Development Internship</span>
+        <span class="hero-badge-text">Interactive Showcase</span>
+      </div>
+
+      <h1 class="hero-title">
+        Curated Visual Perspectives &amp; <span class="gradient-text">Dynamic Gallery</span>
+      </h1>
+
+      <p class="hero-description">
+        A modern, high-performance image gallery crafted with semantic HTML5, responsive CSS Grid, and vanilla JavaScript. Features dynamic category filtering, smooth hover reveals, and an accessible full-screen lightbox modal.
+      </p>
+
+      <!-- Stats Bar -->
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-number" id="stat-total-photos">20</span>
+          <span class="stat-label">Curated Photos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">External Libraries</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Vanilla JS</span>
+        </div>
+      </div>
+
+      <!-- Live Search & Quick Filter Bar -->
+      <div class="search-filter-wrapper">
+        <div class="search-box">
+          <span class="search-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Search by title, location, or keyword (e.g., mountain, code, sunset)..." 
+            aria-label="Search images by title or keyword"
+            autocomplete="off"
+          >
+          <button id="search-clear-btn" class="search-clear-btn hidden" aria-label="Clear search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="search-meta" id="search-meta">
+          Showing <span id="visible-count">20</span> of <span id="total-count">20</span> photographs
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <main class="gallery-section" id="gallery-section">
+    <div class="container">
+      <!-- Category Filter Pills -->
+      <nav class="filter-navigation" aria-label="Filter gallery by category">
+        <div class="filter-scroll" role="toolbar" aria-label="Category selection">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
+            <span class="filter-icon">✦</span>
+            <span class="filter-name">All</span>
+            <span class="filter-badge" id="count-all">20</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="nature" aria-pressed="false">
+            <span class="filter-icon">🌿</span>
+            <span class="filter-name">Nature</span>
+            <span class="filter-badge" id="count-nature">4</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="architecture" aria-pressed="false">
+            <span class="filter-icon">🏛️</span>
+            <span class="filter-name">Architecture</span>
+            <span class="filter-badge" id="count-architecture">4</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="travel" aria-pressed="false">
+            <span class="filter-icon">✈️</span>
+            <span class="filter-name">Travel</span>
+            <span class="filter-badge" id="count-travel">4</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="technology" aria-pressed="false">
+            <span class="filter-icon">⚡</span>
+            <span class="filter-name">Technology</span>
+            <span class="filter-badge" id="count-technology">4</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="abstract" aria-pressed="false">
+            <span class="filter-icon">🎨</span>
+            <span class="filter-name">Abstract</span>
+            <span class="filter-badge" id="count-abstract">4</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Active Filter Banner & Reset -->
+      <div class="filter-feedback-bar" id="filter-feedback-bar">
+        <span class="feedback-text">Current Category: <strong id="current-category-label">All Photographs</strong></span>
+        <button type="button" class="reset-filter-btn hidden" id="reset-filter-btn">Reset to All</button>
+      </div>
+
+      <!-- Dynamic Gallery Grid Container -->
+      <div 
+        id="gallery-grid" 
+        class="gallery-grid" 
+        role="region" 
+        aria-label="Image Gallery Grid" 
+        aria-live="polite"
+      >
+        <!-- Cards will be populated dynamically by script.js -->
+      </div>
+
+      <!-- No Results State (when search/filter yields zero items) -->
+      <div id="no-results" class="no-results hidden" role="status">
+        <div class="no-results-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+        </div>
+        <h3 class="no-results-title">No photographs found</h3>
+        <p class="no-results-text">No images match your current filter or search criteria. Try a different category or search term.</p>
+        <button type="button" class="btn-primary" id="btn-clear-filters">Show All Photos</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Full-Screen Lightbox Modal -->
+  <div 
+    id="lightbox" 
+    class="lightbox" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-hidden="true" 
+    aria-label="Full-Screen Image Lightbox"
+  >
+    <!-- Dark Backdrop Overlay (clicking closes lightbox) -->
+    <div class="lightbox-backdrop" id="lightbox-backdrop" tabindex="-1"></div>
+
+    <div class="lightbox-wrapper" id="lightbox-wrapper">
+      <!-- Top Control Bar -->
+      <div class="lightbox-toolbar">
+        <div class="lightbox-meta-pill">
+          <span class="lightbox-category-tag" id="lightbox-category">Nature</span>
+          <span class="lightbox-divider">•</span>
+          <span class="lightbox-counter" id="lightbox-counter" aria-live="polite">01 / 20</span>
+        </div>
+
+        <div class="lightbox-controls">
+          <!-- Zoom Toggle Button -->
+          <button 
+            type="button" 
+            class="control-btn" 
+            id="lightbox-zoom-btn" 
+            aria-label="Toggle zoom magnification" 
+            title="Toggle Zoom (Z)"
+          >
+            <svg class="zoom-in-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <svg class="zoom-out-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </button>
+
+          <!-- Fullscreen Toggle Button -->
+          <button 
+            type="button" 
+            class="control-btn" 
+            id="lightbox-fullscreen-btn" 
+            aria-label="Toggle full-screen mode" 
+            title="Toggle Fullscreen (F)"
+          >
+            <svg class="fs-enter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+            </svg>
+            <svg class="fs-exit-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+            </svg>
+          </button>
+
+          <!-- Open in New Tab Button -->
+          <a 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="control-btn" 
+            id="lightbox-external-btn" 
+            aria-label="Open original image in high resolution" 
+            title="View High-Res Source"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+
+          <!-- Close Lightbox Button -->
+          <button 
+            type="button" 
+            class="control-btn control-btn-close" 
+            id="lightbox-close-btn" 
+            aria-label="Close lightbox overlay" 
+            title="Close Lightbox (Esc)"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Stage: Image & Nav Buttons -->
+      <div class="lightbox-stage">
+        <!-- Previous Button -->
+        <button 
+          type="button" 
+          class="nav-btn nav-btn-prev" 
+          id="lightbox-prev-btn" 
+          aria-label="Previous photograph" 
+          title="Previous (Left Arrow)"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Image Container with Loader -->
+        <div class="lightbox-figure-container" id="lightbox-figure-container">
+          <div class="lightbox-loader" id="lightbox-loader" aria-hidden="true">
+            <div class="spinner"></div>
+          </div>
+          <img 
+            id="lightbox-img" 
+            class="lightbox-img" 
+            src="" 
+            alt="" 
+            tabindex="0"
+          >
+        </div>
+
+        <!-- Next Button -->
+        <button 
+          type="button" 
+          class="nav-btn nav-btn-next" 
+          id="lightbox-next-btn" 
+          aria-label="Next photograph" 
+          title="Next (Right Arrow)"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bottom Caption & Detail Bar -->
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-caption-text">
+          <h2 class="lightbox-title" id="lightbox-title">Photograph Title</h2>
+          <p class="lightbox-desc" id="lightbox-desc">Detailed caption and visual context.</p>
+          <div class="lightbox-photographer">
+            <span class="photographer-label">Photographer / Source:</span>
+            <span class="photographer-name" id="lightbox-author">Unsplash Photography</span>
+          </div>
+        </div>
+
+        <!-- Keyboard Shortcuts Hint -->
+        <div class="lightbox-shortcuts-hint">
+          <span class="shortcut-item"><kbd>←</kbd> Prev</span>
+          <span class="shortcut-item"><kbd>→</kbd> Next</span>
+          <span class="shortcut-item"><kbd>Z</kbd> Zoom</span>
+          <span class="shortcut-item"><kbd>Esc</kbd> Close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo footer-logo">
+            <span class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m14.31 8 5.74 9.94"></path>
+                <path d="M9.69 8h11.48"></path>
+                <path d="m7.38 12 5.74-9.94"></path>
+                <path d="M9.69 16 3.95 6.06"></path>
+                <path d="M14.31 16H2.83"></path>
+                <path d="m16.62 12-5.74 9.94"></path>
+              </svg>
+            </span>
+            <span class="brand-text">
+              <strong>LUMEN</strong>
+              <span class="brand-sub">GALLERY</span>
+            </span>
+          </div>
+          <p class="footer-tagline">
+            CodeAlpha Frontend Development Internship — Task 1: Image Gallery.
+            Engineered with modern HTML5, CSS Grid, and responsive Vanilla JavaScript.
+          </p>
+        </div>
+
+        <div class="footer-meta">
+          <h4 class="footer-heading">Project Highlights</h4>
+          <ul class="footer-list">
+            <li>✓ Responsive CSS Grid Layout</li>
+            <li>✓ Interactive Lightbox with Arrow &amp; Touch Navigation</li>
+            <li>✓ Dynamic 5-Category Live Filtering</li>
+            <li>✓ Keyboard Accessible &amp; Screen Reader Friendly</li>
+            <li>✓ Zero Frameworks or External Build Tools</li>
+          </ul>
+        </div>
+
+        <div class="footer-cta">
+          <h4 class="footer-heading">Internship Task</h4>
+          <p class="footer-cta-text">Task 1: Interactive Image Gallery with Lightbox &amp; Categories.</p>
+          <a href="#hero" class="btn-scroll-top" id="btn-scroll-top" aria-label="Back to top of page">
+            <span>Back to Top</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2026 <strong>CodeAlpha</strong> Frontend Development Internship. Task 1 — Image Gallery. Developed by <strong>Ashay Patakare</strong>.
+        </p>
+        <div class="footer-pills">
+          <span class="pill-badge">HTML5</span>
+          <span class="pill-badge">CSS3</span>
+          <span class="pill-badge">Vanilla JS</span>
+          <span class="pill-badge">No Frameworks</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js" defer></script>
+</body>
+</html>
