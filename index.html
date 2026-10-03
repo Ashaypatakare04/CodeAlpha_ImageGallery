@@ -1,315 +1,562 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CodeAlpha Image Gallery — An interactive, responsive, portfolio-grade photography gallery featuring category filtering, smooth animations, and full-screen lightbox navigation.">
-  <meta name="keywords" content="CodeAlpha, Frontend Development, Image Gallery, JavaScript Lightbox, CSS Grid, Responsive Web Design">
+  <meta name="description" content="In Frame — A curated editorial visual archive and photography exhibition. Documenting places, human moments, nature, and architectural geometry. CodeAlpha Frontend Development Internship Task 1.">
+  <meta name="keywords" content="In Frame, Visual Archive, Photography Gallery, Editorial Design, CodeAlpha Frontend Internship, Modern Web Design">
   <meta name="author" content="Ashay Patakare">
-  <title>CodeAlpha Image Gallery — Visual Perspectives Showcase</title>
+  <title>In Frame — Editorial Visual Archive</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Sans-Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Navigation Bar -->
+  <!-- Header / Minimal Navigation -->
   <header class="site-header" id="site-header">
     <div class="header-inner container">
-      <a href="#hero" class="brand-logo" aria-label="CodeAlpha Image Gallery Home">
-        <span class="brand-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="m14.31 8 5.74 9.94"></path>
-            <path d="M9.69 8h11.48"></path>
-            <path d="m7.38 12 5.74-9.94"></path>
-            <path d="M9.69 16 3.95 6.06"></path>
-            <path d="M14.31 16H2.83"></path>
-            <path d="m16.62 12-5.74 9.94"></path>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>LUMEN</strong>
-          <span class="brand-sub">GALLERY</span>
-        </span>
+      <!-- Left: Gallery Brand / Logo -->
+      <a href="#hero" class="brand-logo" aria-label="In Frame — Home">
+        <span class="brand-mark" aria-hidden="true">[·]</span>
+        <div class="brand-info">
+          <span class="brand-title">In Frame</span>
+          <span class="brand-sub">Visual Archive · No. 01</span>
+        </div>
       </a>
 
-      <div class="header-actions">
-        <span class="task-badge">
-          <span class="badge-dot"></span>
-          CodeAlpha Task 1
-        </span>
-        <a href="#gallery-section" class="nav-link">Explore</a>
-        <a href="https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery" target="_blank" rel="noopener noreferrer" class="btn-github" aria-label="View Project on GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          <span>Repository</span>
-        </a>
-      </div>
+      <!-- Right: Editorial Navigation -->
+      <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#featured" class="nav-link">Featured</a></li>
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#gallery-section" class="nav-link">The Archive</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Theme Toggle Button -->
+          <button 
+            type="button" 
+            class="theme-toggle-btn" 
+            id="theme-toggle" 
+            aria-label="Switch between light and dark theme"
+            title="Toggle Theme"
+          >
+            <span class="theme-icon light-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon dark-icon hidden" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+            <span class="theme-text" id="theme-text">Dark</span>
+          </button>
+
+          <!-- Repository Link -->
+          <a 
+            href="https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="nav-repo-link"
+            aria-label="GitHub Repository"
+          >
+            GitHub
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="hero">
-    <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
-    
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span class="hero-badge-pill">Frontend Development Internship</span>
-        <span class="hero-badge-text">Interactive Showcase</span>
-      </div>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-text-block">
+          <span class="eyebrow-label">Visual Archive</span>
+          
+          <h1 class="hero-headline">
+            Images worth remembering.
+          </h1>
 
-      <h1 class="hero-title">
-        Curated Visual Perspectives &amp; <span class="gradient-text">Dynamic Gallery</span>
-      </h1>
+          <p class="hero-supporting-text">
+            A curated collection of photographs, moments, places and visual stories. Documenting human presence, untamed stillness, and architectural form across time.
+          </p>
 
-      <p class="hero-description">
-        A modern, high-performance image gallery crafted with semantic HTML5, responsive CSS Grid, and vanilla JavaScript. Features dynamic category filtering, smooth hover reveals, and an accessible full-screen lightbox modal.
-      </p>
+          <div class="hero-actions">
+            <a href="#gallery-section" class="btn-editorial-primary">
+              <span>Explore Gallery</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#collections" class="subtle-editorial-link">
+              <span>View Collections</span>
+              <span class="link-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
 
-      <!-- Stats Bar -->
-      <div class="stats-row">
-        <div class="stat-item">
-          <span class="stat-number" id="stat-total-photos">20</span>
-          <span class="stat-label">Curated Photos</span>
+          <div class="hero-archival-note">
+            <span class="note-dot" aria-hidden="true"></span>
+            <span>Edition 2026 · Curated by Ashay Patakare · CodeAlpha Task 1</span>
+          </div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">5</span>
-          <span class="stat-label">Categories</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">0</span>
-          <span class="stat-label">External Libraries</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Vanilla JS</span>
-        </div>
-      </div>
 
-      <!-- Live Search & Quick Filter Bar -->
-      <div class="search-filter-wrapper">
-        <div class="search-box">
-          <span class="search-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </span>
-          <input 
-            type="text" 
-            id="search-input" 
-            class="search-input" 
-            placeholder="Search by title, location, or keyword (e.g., mountain, code, sunset)..." 
-            aria-label="Search images by title or keyword"
-            autocomplete="off"
-          >
-          <button id="search-clear-btn" class="search-clear-btn hidden" aria-label="Clear search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-        <div class="search-meta" id="search-meta">
-          Showing <span id="visible-count">20</span> of <span id="total-count">20</span> photographs
+        <!-- Asymmetric Hero Featured Photograph -->
+        <div class="hero-visual-frame">
+          <figure class="hero-image-card" data-hero-id="nature-1">
+            <div class="hero-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85" 
+                alt="Snow-covered alpine mountain summit bathed in early morning light"
+                class="hero-img"
+                width="700" 
+                height="500"
+              />
+            </div>
+            <figcaption class="hero-caption">
+              <span class="hero-cap-index">01 / NATURE</span>
+              <span class="hero-cap-title">Alpine Solitude</span>
+              <span class="hero-cap-meta">Canadian Rockies · 2026</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Gallery Section -->
-  <main class="gallery-section" id="gallery-section">
-    <div class="container">
-      <!-- Category Filter Pills -->
-      <nav class="filter-navigation" aria-label="Filter gallery by category">
-        <div class="filter-scroll" role="toolbar" aria-label="Category selection">
-          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
-            <span class="filter-icon">✦</span>
-            <span class="filter-name">All</span>
-            <span class="filter-badge" id="count-all">20</span>
-          </button>
-          <button type="button" class="filter-btn" data-filter="nature" aria-pressed="false">
-            <span class="filter-icon">🌿</span>
-            <span class="filter-name">Nature</span>
-            <span class="filter-badge" id="count-nature">4</span>
-          </button>
-          <button type="button" class="filter-btn" data-filter="architecture" aria-pressed="false">
-            <span class="filter-icon">🏛️</span>
-            <span class="filter-name">Architecture</span>
-            <span class="filter-badge" id="count-architecture">4</span>
-          </button>
-          <button type="button" class="filter-btn" data-filter="travel" aria-pressed="false">
-            <span class="filter-icon">✈️</span>
-            <span class="filter-name">Travel</span>
-            <span class="filter-badge" id="count-travel">4</span>
-          </button>
-          <button type="button" class="filter-btn" data-filter="technology" aria-pressed="false">
-            <span class="filter-icon">⚡</span>
-            <span class="filter-name">Technology</span>
-            <span class="filter-badge" id="count-technology">4</span>
-          </button>
-          <button type="button" class="filter-btn" data-filter="abstract" aria-pressed="false">
-            <span class="filter-icon">🎨</span>
-            <span class="filter-name">Abstract</span>
-            <span class="filter-badge" id="count-abstract">4</span>
+    <!-- Featured Section: Selected Works (Asymmetric Magazine Layout) -->
+    <section class="featured-section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">FEATURED</span>
+          <h2 class="section-heading">Selected works</h2>
+          <p class="section-subtext">A deliberate composition of notable frames exhibiting rhythm, shadow, and emotional stillness.</p>
+        </div>
+
+        <!-- Asymmetric Editorial Grid Composition -->
+        <div class="editorial-featured-grid">
+          <!-- 1. Large Landscape Image -->
+          <article class="featured-item item-large" data-id="arch-1" tabindex="0" role="button" aria-label="View featured work: Silent Geometry">
+            <div class="featured-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85" 
+                alt="Helical spiral staircase architecture"
+                loading="lazy"
+              />
+              <span class="hover-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="featured-meta">
+              <span class="featured-index">01 / ARCHITECTURE</span>
+              <h3 class="featured-title">Silent Geometry</h3>
+              <p class="featured-location">Pune, India · 2026</p>
+            </div>
+          </article>
+
+          <!-- 2. Smaller Staggered Image -->
+          <article class="featured-item item-medium" data-id="portrait-1" tabindex="0" role="button" aria-label="View featured work: Quiet Contemplation">
+            <div class="featured-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85" 
+                alt="Editorial portrait in warm natural lighting"
+                loading="lazy"
+              />
+              <span class="hover-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="featured-meta">
+              <span class="featured-index">02 / PORTRAITS</span>
+              <h3 class="featured-title">Quiet Contemplation</h3>
+              <p class="featured-location">Kyoto, Japan · 2026</p>
+            </div>
+          </article>
+
+          <!-- 3. Smaller Image -->
+          <article class="featured-item item-small" data-id="nature-2" tabindex="0" role="button" aria-label="View featured work: Emerald Canopy">
+            <div class="featured-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=85" 
+                alt="Sunbeams breaking through a foggy green forest"
+                loading="lazy"
+              />
+              <span class="hover-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="featured-meta">
+              <span class="featured-index">03 / NATURE</span>
+              <h3 class="featured-title">Emerald Canopy</h3>
+              <p class="featured-location">Black Forest, Germany · 2025</p>
+            </div>
+          </article>
+
+          <!-- 4. Portrait-Oriented Image -->
+          <article class="featured-item item-portrait" data-id="people-1" tabindex="0" role="button" aria-label="View featured work: Transit Conversations">
+            <div class="featured-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=85" 
+                alt="Candid human moment in urban transit"
+                loading="lazy"
+              />
+              <span class="hover-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="featured-meta">
+              <span class="featured-index">04 / PEOPLE</span>
+              <h3 class="featured-title">Transit Conversations</h3>
+              <p class="featured-location">Mumbai, India · 2026</p>
+            </div>
+          </article>
+
+          <!-- 5. Wide Architectural / Urban Panoramic Image -->
+          <article class="featured-item item-wide" data-id="urban-1" tabindex="0" role="button" aria-label="View featured work: Metropolitan Pulse">
+            <div class="featured-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=85" 
+                alt="Metropolitan cityscape at blue hour"
+                loading="lazy"
+              />
+              <span class="hover-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="featured-meta">
+              <span class="featured-index">05 / URBAN</span>
+              <h3 class="featured-title">Metropolitan Pulse</h3>
+              <p class="featured-location">Tokyo, Japan · 2026</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections-section" id="collections">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">CURATED SUITES</span>
+          <h2 class="section-heading">Collections</h2>
+          <p class="section-subtext">Thematic groupings exploring specific photographic inquiries and visual dialogues.</p>
+        </div>
+
+        <div class="collections-grid">
+          <!-- Collection 1: Places -->
+          <div class="collection-card" data-category="travel">
+            <div class="collection-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" 
+                alt="Places collection representative image"
+                loading="lazy"
+              />
+            </div>
+            <div class="collection-content">
+              <span class="collection-num">COLLECTION 01</span>
+              <h3 class="collection-title">Places</h3>
+              <p class="collection-desc">Cities, landscapes and architectural monuments across continents.</p>
+              <button type="button" class="collection-link-btn" data-filter="travel">
+                <span>Explore Places</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 2: People -->
+          <div class="collection-card" data-category="people">
+            <div class="collection-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80" 
+                alt="People collection representative image"
+                loading="lazy"
+              />
+            </div>
+            <div class="collection-content">
+              <span class="collection-num">COLLECTION 02</span>
+              <h3 class="collection-title">People</h3>
+              <p class="collection-desc">Portraits, street encounters, and subtle human dialogues.</p>
+              <button type="button" class="collection-link-btn" data-filter="people">
+                <span>Explore People</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 3: Nature -->
+          <div class="collection-card" data-category="nature">
+            <div class="collection-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80" 
+                alt="Nature collection representative image"
+                loading="lazy"
+              />
+            </div>
+            <div class="collection-content">
+              <span class="collection-num">COLLECTION 03</span>
+              <h3 class="collection-title">Nature</h3>
+              <p class="collection-desc">Light, texture, untamed horizons, and organic transitions.</p>
+              <button type="button" class="collection-link-btn" data-filter="nature">
+                <span>Explore Nature</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 4: Moments -->
+          <div class="collection-card" data-category="urban">
+            <div class="collection-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=800&q=80" 
+                alt="Moments collection representative image"
+                loading="lazy"
+              />
+            </div>
+            <div class="collection-content">
+              <span class="collection-num">COLLECTION 04</span>
+              <h3 class="collection-title">Moments</h3>
+              <p class="collection-desc">Everyday atmospheric scenes and ephemeral reflections worth remembering.</p>
+              <button type="button" class="collection-link-btn" data-filter="urban">
+                <span>Explore Moments</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Gallery Section ("THE COLLECTION") -->
+    <section class="gallery-section" id="gallery-section">
+      <div class="container">
+        <div class="archive-header-row">
+          <div>
+            <span class="section-eyebrow">THE COLLECTION</span>
+            <h2 class="section-heading">The Archive</h2>
+          </div>
+          <div class="archive-counter-badge" id="archive-status-badge">
+            <span id="visible-count">24</span> of <span id="total-count">24</span> frames cataloged
+          </div>
+        </div>
+
+        <!-- Editorial Filter Tabs & Integrated Search -->
+        <div class="archive-control-bar">
+          <!-- Filter Tabs -->
+          <nav class="editorial-tabs" aria-label="Archive Categories">
+            <button type="button" class="tab-btn active" data-filter="all" aria-pressed="true">
+              All <span class="tab-count" id="count-all">24</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="nature" aria-pressed="false">
+              Nature <span class="tab-count" id="count-nature">5</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="architecture" aria-pressed="false">
+              Architecture <span class="tab-count" id="count-architecture">4</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="people" aria-pressed="false">
+              People <span class="tab-count" id="count-people">2</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="travel" aria-pressed="false">
+              Travel <span class="tab-count" id="count-travel">4</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="portraits" aria-pressed="false">
+              Portraits <span class="tab-count" id="count-portraits">2</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="abstract" aria-pressed="false">
+              Abstract <span class="tab-count" id="count-abstract">4</span>
+            </button>
+            <button type="button" class="tab-btn" data-filter="urban" aria-pressed="false">
+              Urban <span class="tab-count" id="count-urban">3</span>
+            </button>
+          </nav>
+
+          <!-- Minimal Editorial Search Input -->
+          <div class="editorial-search-wrap">
+            <input 
+              type="text" 
+              id="search-input" 
+              class="editorial-search-input" 
+              placeholder="Search archive (e.g. Pune, Kyoto, mountain)..." 
+              aria-label="Search photographs by keyword, location, or title"
+              autocomplete="off"
+            >
+            <button type="button" id="search-clear-btn" class="editorial-search-clear hidden" aria-label="Clear search">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Status Banner (Editorial) -->
+        <div class="filter-status-row" id="filter-status-row">
+          <span class="status-label">Active Filter: <strong id="active-category-display">All Works</strong></span>
+          <button type="button" class="btn-text-reset hidden" id="reset-filter-btn">Clear Filter</button>
+        </div>
+
+        <!-- Dynamic Editorial Gallery Grid (Preserves natural aspect ratios) -->
+        <div 
+          id="gallery-grid" 
+          class="editorial-gallery-grid" 
+          role="region" 
+          aria-label="Photography Archive Catalog" 
+          aria-live="polite"
+        >
+          <!-- Dynamically populated by script.js -->
+        </div>
+
+        <!-- No Results Fallback -->
+        <div id="no-results" class="no-results-panel hidden" role="status">
+          <span class="empty-mark" aria-hidden="true">[ ∅ ]</span>
+          <h3 class="no-results-title">No matching records in archive</h3>
+          <p class="no-results-desc">No photographs match the active query. Reset the criteria to view the complete catalog.</p>
+          <button type="button" class="btn-editorial-primary" id="btn-clear-filters">
+            <span>Show Complete Archive</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
           </button>
         </div>
-      </nav>
-
-      <!-- Active Filter Banner & Reset -->
-      <div class="filter-feedback-bar" id="filter-feedback-bar">
-        <span class="feedback-text">Current Category: <strong id="current-category-label">All Photographs</strong></span>
-        <button type="button" class="reset-filter-btn hidden" id="reset-filter-btn">Reset to All</button>
       </div>
+    </section>
 
-      <!-- Dynamic Gallery Grid Container -->
-      <div 
-        id="gallery-grid" 
-        class="gallery-grid" 
-        role="region" 
-        aria-label="Image Gallery Grid" 
-        aria-live="polite"
-      >
-        <!-- Cards will be populated dynamically by script.js -->
-      </div>
-
-      <!-- No Results State (when search/filter yields zero items) -->
-      <div id="no-results" class="no-results hidden" role="status">
-        <div class="no-results-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            <line x1="8" y1="11" x2="14" y2="11"></line>
-          </svg>
+    <!-- About Section ("EVERY FRAME HAS A STORY") -->
+    <section class="about-section" id="about">
+      <div class="container about-container">
+        <div class="about-header-col">
+          <span class="section-eyebrow">MANIFESTO</span>
+          <h2 class="about-heading">Every frame has a story.</h2>
         </div>
-        <h3 class="no-results-title">No photographs found</h3>
-        <p class="no-results-text">No images match your current filter or search criteria. Try a different category or search term.</p>
-        <button type="button" class="btn-primary" id="btn-clear-filters">Show All Photos</button>
+
+        <div class="about-body-col">
+          <p class="about-lead">
+            <strong>In Frame</strong> is an independent digital archive dedicated to photographic stillness, architectural harmony, and the quiet visual textures of our contemporary world.
+          </p>
+
+          <p class="about-paragraph">
+            Photography is rarely about sheer spectacle; it is about paying attention. This archive documents the interaction between natural light, structural geometry, and fleeting human moments across continents. Each frame is selected not for transient trends, but for its enduring rhythm and ability to provoke contemplation.
+          </p>
+
+          <p class="about-paragraph">
+            Designed with generous whitespace and respectful typography, In Frame presents photography as a curated exhibition rather than an endless ephemeral feed. Crafted as part of the <strong>CodeAlpha Frontend Development Internship</strong> (Task 1).
+          </p>
+
+          <!-- Archival Metric Tally -->
+          <div class="archive-tally-row">
+            <div class="tally-item">
+              <span class="tally-num">04</span>
+              <span class="tally-label">Collections</span>
+            </div>
+            <div class="tally-item">
+              <span class="tally-num">24</span>
+              <span class="tally-label">Images</span>
+            </div>
+            <div class="tally-item">
+              <span class="tally-num">14</span>
+              <span class="tally-label">Places</span>
+            </div>
+            <div class="tally-item">
+              <span class="tally-num">2026</span>
+              <span class="tally-label">Archive</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- Full-Screen Lightbox Modal -->
+  <!-- Full-Screen Lightbox Modal (Refined Nocturnal Archive) -->
   <div 
     id="lightbox" 
     class="lightbox" 
     role="dialog" 
     aria-modal="true" 
     aria-hidden="true" 
-    aria-label="Full-Screen Image Lightbox"
+    aria-label="Archive Image Lightbox"
   >
-    <!-- Dark Backdrop Overlay (clicking closes lightbox) -->
     <div class="lightbox-backdrop" id="lightbox-backdrop" tabindex="-1"></div>
 
-    <div class="lightbox-wrapper" id="lightbox-wrapper">
-      <!-- Top Control Bar -->
-      <div class="lightbox-toolbar">
-        <div class="lightbox-meta-pill">
-          <span class="lightbox-category-tag" id="lightbox-category">Nature</span>
-          <span class="lightbox-divider">•</span>
-          <span class="lightbox-counter" id="lightbox-counter" aria-live="polite">01 / 20</span>
+    <div class="lightbox-dialog" id="lightbox-dialog">
+      <!-- Lightbox Header / Meta -->
+      <div class="lightbox-header">
+        <div class="lightbox-meta-tag">
+          <span class="lb-category" id="lightbox-category">ARCHITECTURE</span>
+          <span class="lb-sep">/</span>
+          <span class="lb-counter" id="lightbox-counter" aria-live="polite">01 / 24</span>
         </div>
 
-        <div class="lightbox-controls">
-          <!-- Zoom Toggle Button -->
+        <div class="lightbox-tools">
+          <!-- Zoom Toggle -->
           <button 
             type="button" 
-            class="control-btn" 
+            class="lb-tool-btn" 
             id="lightbox-zoom-btn" 
             aria-label="Toggle zoom magnification" 
-            title="Toggle Zoom (Z)"
+            title="Zoom Magnification (Z)"
           >
-            <svg class="zoom-in-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-            <svg class="zoom-out-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
+            <span class="lb-icon zoom-in-icon" aria-hidden="true">＋</span>
+            <span class="lb-icon zoom-out-icon hidden" aria-hidden="true">－</span>
+            <span class="lb-tool-label">Zoom</span>
           </button>
 
-          <!-- Fullscreen Toggle Button -->
+          <!-- Fullscreen Toggle -->
           <button 
             type="button" 
-            class="control-btn" 
+            class="lb-tool-btn" 
             id="lightbox-fullscreen-btn" 
-            aria-label="Toggle full-screen mode" 
+            aria-label="Toggle fullscreen" 
             title="Toggle Fullscreen (F)"
           >
-            <svg class="fs-enter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-            </svg>
-            <svg class="fs-exit-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
-            </svg>
+            <span class="lb-tool-label">Fullscreen</span>
           </button>
 
-          <!-- Open in New Tab Button -->
+          <!-- Source Link -->
           <a 
             href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="control-btn" 
+            class="lb-tool-btn" 
             id="lightbox-external-btn" 
-            aria-label="Open original image in high resolution" 
-            title="View High-Res Source"
+            aria-label="View source photography" 
+            title="Open Original High-Res Source"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
+            <span class="lb-tool-label">Original ↗</span>
           </a>
 
-          <!-- Close Lightbox Button -->
+          <!-- Close Button -->
           <button 
             type="button" 
-            class="control-btn control-btn-close" 
+            class="lb-close-btn" 
             id="lightbox-close-btn" 
-            aria-label="Close lightbox overlay" 
-            title="Close Lightbox (Esc)"
+            aria-label="Close archive lightbox" 
+            title="Close (Esc)"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+            <span>Close</span>
+            <span class="lb-close-x" aria-hidden="true">✕</span>
           </button>
         </div>
       </div>
 
-      <!-- Main Stage: Image & Nav Buttons -->
+      <!-- Main Stage -->
       <div class="lightbox-stage">
-        <!-- Previous Button -->
+        <!-- Prev Button -->
         <button 
           type="button" 
-          class="nav-btn nav-btn-prev" 
+          class="lb-nav-btn lb-prev" 
           id="lightbox-prev-btn" 
-          aria-label="Previous photograph" 
+          aria-label="Previous image" 
           title="Previous (Left Arrow)"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
+          <span class="arrow-sym" aria-hidden="true">←</span>
+          <span class="sr-only">Previous</span>
         </button>
 
-        <!-- Image Container with Loader -->
-        <div class="lightbox-figure-container" id="lightbox-figure-container">
-          <div class="lightbox-loader" id="lightbox-loader" aria-hidden="true">
-            <div class="spinner"></div>
+        <!-- Image Container -->
+        <div class="lightbox-image-box" id="lightbox-image-box">
+          <div class="lightbox-spinner" id="lightbox-loader" aria-hidden="true">
+            <span class="spinner-line"></span>
           </div>
           <img 
             id="lightbox-img" 
@@ -323,106 +570,101 @@
         <!-- Next Button -->
         <button 
           type="button" 
-          class="nav-btn nav-btn-next" 
+          class="lb-nav-btn lb-next" 
           id="lightbox-next-btn" 
-          aria-label="Next photograph" 
+          aria-label="Next image" 
           title="Next (Right Arrow)"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
+          <span class="arrow-sym" aria-hidden="true">→</span>
+          <span class="sr-only">Next</span>
         </button>
       </div>
 
-      <!-- Bottom Caption & Detail Bar -->
-      <div class="lightbox-caption-bar">
-        <div class="lightbox-caption-text">
-          <h2 class="lightbox-title" id="lightbox-title">Photograph Title</h2>
-          <p class="lightbox-desc" id="lightbox-desc">Detailed caption and visual context.</p>
-          <div class="lightbox-photographer">
-            <span class="photographer-label">Photographer / Source:</span>
-            <span class="photographer-name" id="lightbox-author">Unsplash Photography</span>
+      <!-- Lightbox Caption Bar -->
+      <div class="lightbox-caption">
+        <div class="lb-caption-left">
+          <h2 class="lb-title" id="lightbox-title">Photograph Title</h2>
+          <p class="lb-desc" id="lightbox-desc">Detailed photographic context and notes.</p>
+        </div>
+        <div class="lb-caption-right">
+          <div class="lb-meta-detail">
+            <span class="lb-meta-label">Location:</span>
+            <span class="lb-meta-val" id="lightbox-location">Pune, India</span>
+          </div>
+          <div class="lb-meta-detail">
+            <span class="lb-meta-label">Year:</span>
+            <span class="lb-meta-val" id="lightbox-year">2026</span>
+          </div>
+          <div class="lb-meta-detail">
+            <span class="lb-meta-label">Photographer:</span>
+            <span class="lb-meta-val" id="lightbox-author">Unsplash Archive</span>
           </div>
         </div>
+      </div>
 
-        <!-- Keyboard Shortcuts Hint -->
-        <div class="lightbox-shortcuts-hint">
-          <span class="shortcut-item"><kbd>←</kbd> Prev</span>
-          <span class="shortcut-item"><kbd>→</kbd> Next</span>
-          <span class="shortcut-item"><kbd>Z</kbd> Zoom</span>
-          <span class="shortcut-item"><kbd>Esc</kbd> Close</span>
-        </div>
+      <!-- Minimal Keyboard Hint -->
+      <div class="lightbox-footer-hints">
+        <span><kbd>←</kbd> / <kbd>→</kbd> Navigate</span>
+        <span><kbd>Z</kbd> Zoom</span>
+        <span><kbd>F</kbd> Fullscreen</span>
+        <span><kbd>Esc</kbd> Close</span>
+        <span>Swipe mobile</span>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="brand-logo footer-logo">
-            <span class="brand-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="m14.31 8 5.74 9.94"></path>
-                <path d="M9.69 8h11.48"></path>
-                <path d="m7.38 12 5.74-9.94"></path>
-                <path d="M9.69 16 3.95 6.06"></path>
-                <path d="M14.31 16H2.83"></path>
-                <path d="m16.62 12-5.74 9.94"></path>
-              </svg>
-            </span>
-            <span class="brand-text">
-              <strong>LUMEN</strong>
-              <span class="brand-sub">GALLERY</span>
-            </span>
-          </div>
-          <p class="footer-tagline">
-            CodeAlpha Frontend Development Internship — Task 1: Image Gallery.
-            Engineered with modern HTML5, CSS Grid, and responsive Vanilla JavaScript.
+    <div class="container footer-container">
+      <div class="footer-top-row">
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">In Frame</div>
+          <p class="footer-brand-desc">
+            A digital archive of curated photography, architectural stillness, and human moments.
+            Crafted for the CodeAlpha Frontend Development Internship (Task 1).
+          </p>
+          <p class="footer-closing-phrase">
+            <em>Collected frame by frame.</em>
           </p>
         </div>
 
-        <div class="footer-meta">
-          <h4 class="footer-heading">Project Highlights</h4>
-          <ul class="footer-list">
-            <li>✓ Responsive CSS Grid Layout</li>
-            <li>✓ Interactive Lightbox with Arrow &amp; Touch Navigation</li>
-            <li>✓ Dynamic 5-Category Live Filtering</li>
-            <li>✓ Keyboard Accessible &amp; Screen Reader Friendly</li>
-            <li>✓ Zero Frameworks or External Build Tools</li>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Archive Index</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#featured">Selected Works</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#gallery-section">The Collection</a></li>
+            <li><a href="#about">About &amp; Manifesto</a></li>
           </ul>
         </div>
 
-        <div class="footer-cta">
-          <h4 class="footer-heading">Internship Task</h4>
-          <p class="footer-cta-text">Task 1: Interactive Image Gallery with Lightbox &amp; Categories.</p>
-          <a href="#hero" class="btn-scroll-top" id="btn-scroll-top" aria-label="Back to top of page">
-            <span>Back to Top</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="12" y1="19" x2="12" y2="5"></line>
-              <polyline points="5 12 12 5 19 12"></polyline>
-            </svg>
-          </a>
+        <div class="footer-meta-col">
+          <h4 class="footer-col-title">Project Details</h4>
+          <ul class="footer-links">
+            <li>CodeAlpha Frontend Internship</li>
+            <li>Task 1 — Image Gallery</li>
+            <li>Developer: Ashay Patakare</li>
+            <li><a href="https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p class="copyright-text">
-          &copy; 2026 <strong>CodeAlpha</strong> Frontend Development Internship. Task 1 — Image Gallery. Developed by <strong>Ashay Patakare</strong>.
+      <div class="footer-bottom-row">
+        <p class="footer-copyright">
+          &copy; 2026 In Frame Visual Archive. All visual rights reserved to respective photographers.
         </p>
-        <div class="footer-pills">
-          <span class="pill-badge">HTML5</span>
-          <span class="pill-badge">CSS3</span>
-          <span class="pill-badge">Vanilla JS</span>
-          <span class="pill-badge">No Frameworks</span>
+        <div class="footer-spec-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>Vanilla JS</span>
+          <span>Zero Frameworks</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Main JavaScript File -->
+  <!-- Main JavaScript Engine -->
   <script src="script.js" defer></script>
 </body>
 </html>

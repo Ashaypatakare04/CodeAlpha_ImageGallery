@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="6" fill="#171714"/>
+  <!-- Archival Frame Brackets -->
+  <path d="M7 12V8h4M21 8h4v4M25 20v4h-4M11 24H7v-4" stroke="#C7A77A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Focus Center Point -->
+  <circle cx="16" cy="16" r="2.5" fill="#C7A77A"/>
+</svg>

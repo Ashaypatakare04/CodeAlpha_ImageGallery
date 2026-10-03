@@ -1,77 +1,111 @@
-# CodeAlpha Image Gallery 📸
+# In Frame — Editorial Visual Archive 🎞️
 
-[![CodeAlpha Internship](https://img.shields.io/badge/CodeAlpha-Frontend%20Development-6366f1.svg)](https://www.codealpha.tech/)
-[![Task](https://img.shields.io/badge/Task-Task%201%20Image%20Gallery-8b5cf6.svg)](#codealpha-internship-task-information)
-[![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-10b981.svg)](#technologies-used)
+[![CodeAlpha Internship](https://img.shields.io/badge/CodeAlpha-Frontend%20Development-8A6A45.svg)](https://www.codealpha.tech/)
+[![Task](https://img.shields.io/badge/Task-Task%201%20Image%20Gallery-C7A77A.svg)](#codealpha-internship-task-information)
+[![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-171714.svg)](#technologies-used)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-An ultra-responsive, modern, portfolio-grade photography image gallery created as part of the **CodeAlpha Frontend Development Internship** (Task 1). 
+An ultra-refined, contemporary **editorial visual archive and photography exhibition** created for the **CodeAlpha Frontend Development Internship** (Task 1).
 
-Built from scratch with **pure HTML5, CSS Grid, and Vanilla JavaScript**, with **zero external libraries, no frameworks, and no build tools**.
-
----
-
-## 🌟 Project Overview
-
-**CodeAlpha Image Gallery (Lumen Gallery)** is an interactive visual showcase featuring dynamic category filtering, real-time live search, fluid hover effects, and a full-screen lightbox modal with touch swipe gestures and keyboard navigation.
-
-### Live Demo & Repository
-- **GitHub Repository**: [https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery](https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery)
-- **Direct Run**: Double-click `index.html` to launch locally in any web browser.
+Inspired by the design philosophy of high-end cultural publications, biennial exhibitions, and architectural monographs (such as *En Peyar* and *Aperture*), **In Frame** merges **editorial typography**, **warm minimalism**, **generous whitespace**, and **photography-first layouts** into a seamless, high-performance web experience.
 
 ---
 
-## ✨ Features
+## 🏛️ Design Philosophy
 
-### 1. Modern Responsive CSS Grid
-- Fluid multi-column layout adapting seamlessly across desktop, tablet, and mobile devices.
-- Rounded cards with subtle border glow, realistic depth drop-shadows, and smooth hover elevation.
-- `object-fit: cover` thumbnails with smooth scale transitions (`scale(1.08)`) and gradient overlay captions.
+> **Editorial Gallery × Digital Archive × Modern Portfolio**
 
-### 2. Dynamic Category Filtering & Live Search
-- **5 Curated Categories**: *Nature*, *Architecture*, *Travel*, *Technology*, and *Abstract*.
-- Filter buttons with dynamic item count badges and glowing active states.
-- Smooth card exit/entry animations.
-- Instant live search bar filtering across titles, descriptions, locations, and photographer credits.
-- Dynamic result counters and quick "Reset to All" feedback banner.
+- **Warm Minimalism**: High-contrast, intentional layout with zero distracting neon gradients or gimmicky animations.
+- **Strong Typographic Hierarchy**: Editorial serif (`Cormorant Garamond`) paired with a precision modernist sans-serif (`Plus Jakarta Sans`) and uppercase tracking.
+- **Archival Preservation**: Photographs maintain their natural aspect ratios rather than being forced into aggressive crops.
+- **Dual-State Editorial Palette**: Default warm editorial linen tones (`#F5F1E8`) with a nocturnal archive dark mode (`#151513`).
 
-### 3. Full-Screen Interactive Lightbox Modal
-- Click any image card or press <kbd>Enter</kbd> to launch the full-screen lightbox overlay.
-- Large high-resolution photography view with background blur (`backdrop-filter: blur(20px)`).
-- **Navigation Controls**:
-  - Previous (`<`) and Next (`>`) on-screen buttons.
-  - Keyboard navigation: <kbd>←</kbd> (Previous) and <kbd>→</kbd> (Next).
-  - Mobile swipe gestures: Swipe left for next, swipe right for previous.
-  - Image counter (e.g. `03 / 20` or `01 / 04`).
-- **Context-Aware Navigation**: When filtering is active, the lightbox cycles *strictly through the currently filtered images*.
-- **Backdrop & Dismissal**: Clicking outside or pressing <kbd>Esc</kbd> closes the modal.
-- Background scroll locking (`overflow: hidden`) when modal is open.
-- **Bonus Controls**:
-  - Image Zoom Magnification mode (<kbd>Z</kbd>).
-  - Native Fullscreen toggle mode (<kbd>F</kbd>).
-  - Direct external link to source resolution image.
-  - Smart adjacent image preloading for zero-latency transitions.
+---
 
-### 4. Accessibility & Performance First
-- Built with semantic HTML elements (`<header>`, `<nav>`, `<main>`, `<figure>`, `<figcaption>`, `<button>`, `<footer>`).
-- Full keyboard accessibility with focus outlines and keyboard trap in lightbox modal.
-- Native `loading="lazy"` on thumbnails for fast initial page load.
-- Descriptive `alt` attributes on all images.
-- High contrast, dark-slate visual hierarchy meeting WCAG standards.
+## ✨ Key Features
+
+### 1. Minimalist Navigation & Theme Engine
+- Brand identity with typographic logo `[·] In Frame` and edition indicator.
+- Minimal navigation links (`Featured`, `Collections`, `The Archive`, `About`).
+- **Dark / Light Mode Toggle**: Smooth theme switching with `localStorage` persistence and automatic `prefers-color-scheme` synchronization.
+- Direct repository link to GitHub.
+
+### 2. Large Editorial Hero
+- Eyebrow: `VISUAL ARCHIVE · 2026 EDITION`.
+- Headline: *"Images worth remembering."*
+- Supporting text introducing the curated photographic narrative.
+- Primary and secondary editorial action links (`Explore Gallery` & `View Collections →`).
+- Asymmetric featured archival frame card with metadata.
+
+### 3. "Selected Works" (Asymmetric Featured Composition)
+- Magazine-style asymmetric composition instead of a repetitive grid:
+  - 1 Large landscape hero frame
+  - 2 Staggered smaller frames
+  - 1 Portrait study
+  - 1 Wide architectural panoramic frame
+- Restrained hover interaction: subtle `1.03` scale zoom, subtle arrow indicator reveal, and metadata fade with smooth 400ms easing.
+
+### 4. Curated Collections Section
+- **Places**: Cities, landscapes and architectural monuments.
+- **People**: Portraits, street encounters, and human dialogues.
+- **Nature**: Light, texture, untamed horizons, and organic transitions.
+- **Moments**: Everyday scenes and ephemeral reflections worth remembering.
+- Interactive suite cards that filter the archive and smoothly scroll to results.
+
+### 5. "The Collection" (The Archive Catalog)
+- **8 Editorial Filter Tabs**: *All, Nature, Architecture, People, Travel, Portraits, Abstract, Urban*.
+- Dynamic live item counter per tab.
+- **Integrated Archive Search**: Real-time filtering across titles, descriptions, locations, years, and categories with instant clear control.
+- Minimalist status row with active filter indicator and quick reset.
+- Responsive multi-column layout preserving natural image proportions:
+  - Desktop: 3–4 columns
+  - Tablet: 2–3 columns
+  - Mobile: 1–2 columns
+
+### 6. Nocturnal Lightbox Modal
+- Deep dark backdrop (`rgba(18, 18, 16, 0.97)`) for focused photo inspection.
+- Large high-resolution photography with smart adjacent photo preloading.
+- **Context-Aware Navigation**: Lightbox cycles strictly through the *currently filtered subset*.
+- Complete metadata: Reference ID, Category, Title, Caption, Location, Year, and Photographer.
+- Interactive controls:
+  - Previous (`<`) & Next (`>`) on-screen buttons
+  - Keyboard navigation: <kbd>←</kbd> (Previous), <kbd>→</kbd> (Next), <kbd>Esc</kbd> (Close)
+  - Zoom toggle: <kbd>Z</kbd>
+  - Fullscreen toggle: <kbd>F</kbd>
+  - Mobile touch swipe gestures (swipe left/right)
+  - Page scroll lock while modal is open
+
+### 7. Manifesto ("Every Frame Has a Story")
+- Concise editorial mission statement on photography, stillness, and visual culture.
+- Archival metrics tally: `04 Collections`, `24 Images`, `14 Places`, `2026 Archive`.
+
+---
+
+## 🎨 Color System
+
+| Token | Light Mode (Default) | Dark Mode (Nocturnal Archive) | Description |
+| :--- | :--- | :--- | :--- |
+| **Background** | `#F5F1E8` | `#151513` | Warm linen vs. Deep obsidian |
+| **Surface** | `#E8E2D7` | `#1F1E1B` | Archival card canvas |
+| **Primary Text** | `#171714` | `#F1EEE7` | High-contrast editorial ink |
+| **Secondary Text**| `#68655D` | `#A8A49A` | Supporting metadata & body |
+| **Borders** | `#D8D2C5` | `#36342F` | Hairline framing |
+| **Accent** | `#8A6A45` | `#C7A77A` | Warm bronze & golden ochre |
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology | Purpose |
+| Layer | Implementation |
 | :--- | :--- |
-| **HTML5** | Semantic structure, accessible landmarks, metadata, SVG icons |
-| **CSS3** | CSS Custom Properties (Variables), Responsive CSS Grid, Flexbox, Glassmorphism, Keyframe animations, Media Queries |
-| **Vanilla JavaScript (ES6+)** | State management, dynamic DOM rendering, event delegation, lightbox engine, touch gestures, keyboard bindings |
-| **Google Fonts** | `Outfit` (headings) and `Plus Jakarta Sans` (body and UI) |
-| **Unsplash CDN** | High-definition, royalty-free photography with optimized resolution parameters |
+| **Markup** | Semantic HTML5, accessible ARIA roles (`role="dialog"`, `aria-modal="true"`, `aria-pressed`) |
+| **Styles** | Modern CSS3, CSS Custom Properties (Variables), CSS Grid, Flexbox, Media Queries |
+| **Scripting** | Pure Vanilla JavaScript (ES6+), State Management, Event Delegation, Touch APIs |
+| **Typography** | `Cormorant Garamond` (Editorial Serif) & `Plus Jakarta Sans` (Modern Sans-Serif) |
+| **Icons & Assets** | Custom SVG Favicon (`favicon.svg`) and scalable vector emblems |
+| **Photography** | 24 Curated high-res photographs from verified Unsplash archives |
 
-*Zero dependencies: No React, No Bootstrap, No Tailwind, No jQuery, No bundlers required.*
+*Zero external frameworks, no React, no Tailwind, no Bootstrap, no build tools.*
 
 ---
 
@@ -80,35 +114,35 @@ Built from scratch with **pure HTML5, CSS Grid, and Vanilla JavaScript**, with *
 ```text
 CodeAlpha_ImageGallery/
 │
-├── index.html          # Semantic HTML5 markup and lightbox modal structure
-├── style.css           # Modern CSS3 styles, variables, grid system & animations
-├── script.js           # Vanilla JavaScript state engine, filters & lightbox
-├── README.md           # Project documentation and internship submission details
+├── index.html          # Semantic HTML5 structure, metadata & layout
+├── style.css           # Warm editorial CSS, dark mode tokens & responsive grid
+├── script.js           # Vanilla JS archive engine, lightbox & filter logic
+├── favicon.svg         # Minimalist editorial frame favicon
+├── README.md           # Documentation & internship submission information
 │
 └── images/             # Optional local images directory
-    └── README.md       # Guide on switching from CDN to local image files
+    └── README.md       # Guide for swapping CDN URLs with local photo assets
 ```
 
 ---
 
 ## 🚀 How to Run the Project
 
-Running this project requires no installation, no Node.js, and no web server:
+No installation, build tools, or servers required:
 
-1. **Clone or Download the Repository**:
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery.git
    ```
 
-2. **Navigate into the Project Folder**:
+2. **Navigate to the Directory**:
    ```bash
    cd CodeAlpha_ImageGallery
    ```
 
-3. **Launch the Website**:
-   - Double-click `index.html` in your file explorer, OR
-   - Right-click `index.html` and choose **Open with > Google Chrome / Microsoft Edge / Firefox**, OR
-   - Use VS Code Live Server extension if preferred.
+3. **Launch**:
+   - Double-click `index.html` to open in any browser (Chrome, Edge, Safari, Firefox), OR
+   - Right-click `index.html` and choose **Open with > Your Preferred Browser**.
 
 ---
 
@@ -118,48 +152,24 @@ Running this project requires no installation, no Node.js, and no web server:
 - **Domain**: Frontend Development Internship
 - **Task Number**: Task 1
 - **Task Title**: Image Gallery
+- **Project Name**: **In Frame — Editorial Visual Archive**
 - **Intern Name**: Ashay Patakare
 - **GitHub Repository**: [Ashaypatakare04/CodeAlpha_ImageGallery](https://github.com/Ashaypatakare04/CodeAlpha_ImageGallery)
 
-### Task Requirements Checklist
+### Requirements Verification Checklist
 
-| Requirement | Status | Notes |
-| :--- | :---: | :--- |
-| 1. Design an image gallery using HTML and CSS | ✅ Complete | Responsive CSS Grid with glassmorphic cards and hover reveals |
-| 2. Use JavaScript for image navigation | ✅ Complete | Modular ES6 navigation engine with circular wrapping |
-| 3. Add Previous and Next buttons | ✅ Complete | Accessible on-screen buttons, keyboard arrows, and touch swipes |
-| 4. Implement full-screen lightbox/modal view | ✅ Complete | Blur overlay, counter, zoom toggle, fullscreen toggle, description |
-| 5. Add hover effects to gallery images | ✅ Complete | Scale transform (`scale(1.08)`), card elevation, badge animations |
-| 6. Add smooth transitions and animations | ✅ Complete | Fade-in filters, smooth zoom, crossfades, and button transitions |
-| 7. Responsive for desktop, tablet, and mobile | ✅ Complete | Custom media queries for desktop, tablet, and mobile screens |
-| 8. Bonus: Image categories / filters | ✅ Complete | 5 Categories (Nature, Architecture, Travel, Tech, Abstract) + Search |
-| 9. Filtered Lightbox Synchronization | ✅ Complete | Lightbox navigates strictly within the active filtered subset |
-
----
-
-## 🖼️ Screenshots Section Placeholder
-
-> *Screenshots showing Desktop Grid, Category Filtering, and Full-Screen Lightbox:*
-
-| Desktop Gallery Overview | Lightbox Fullscreen View |
-| :---: | :---: |
-| ![Desktop View Placeholder](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80) | ![Lightbox View Placeholder](https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80) |
-
-| Mobile Responsive View | Category Filtering in Action |
-| :---: | :---: |
-| ![Mobile View Placeholder](https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80) | ![Filter View Placeholder](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80) |
-
-*(To add your own screenshots, capture your browser and replace the image links or place PNGs in the `images/` directory.)*
-
----
-
-## 🔮 Future Improvements
-
-1. **User Uploads**: Allow users to drag-and-drop or upload custom photos via client-side `FileReader` API.
-2. **Favorite / Bookmarks**: Store favorite photos locally using `localStorage`.
-3. **Slideshow Mode**: An auto-play carousel button with customizable interval timer.
-4. **EXIF Metadata Inspector**: Display aperture, shutter speed, ISO, and focal length for photography enthusiasts.
-5. **Masonry Layout Mode**: Toggle between uniform grid and dynamic aspect-ratio Pinterest-style masonry.
+| Requirement | Implementation Status |
+| :--- | :---: |
+| 1. Design an image gallery using HTML and CSS | ✅ Complete (Editorial design with warm palette & CSS Grid) |
+| 2. Use JavaScript for image navigation | ✅ Complete (Circular wrapping, preloading, smooth fade) |
+| 3. Add Previous and Next buttons | ✅ Complete (On-screen buttons, arrow keys, touch swipes) |
+| 4. Full-screen lightbox/modal view on click | ✅ Complete (Nocturnal overlay, counter, zoom, fullscreen) |
+| 5. Hover effects on gallery images | ✅ Complete (Restrained 1.03 scale zoom, arrow reveal) |
+| 6. Smooth transitions and animations | ✅ Complete (300-500ms easing, respecting reduced motion) |
+| 7. Responsive for desktop, tablet, and mobile | ✅ Complete (Custom breakpoints, touch-first mobile UX) |
+| 8. Category filters (bonus feature) | ✅ Complete (8 Tabs: All, Nature, Arch, People, Travel, Portraits, Abstract, Urban) |
+| 9. Filter-Aware Lightbox Navigation | ✅ Complete (Cycles strictly within active filtered subset) |
+| 10. Dark Mode & Theme Toggle | ✅ Complete (Instant switch, persisted in localStorage) |
 
 ---
 
@@ -167,4 +177,4 @@ Running this project requires no installation, no Node.js, and no web server:
 
 This project is licensed under the [MIT License](LICENSE) — free to use for educational and portfolio purposes.
 
-Developed with ❤️ by **Ashay Patakare** for the **CodeAlpha Frontend Development Internship**.
+*Curated & developed frame by frame by **Ashay Patakare** for the **CodeAlpha Frontend Development Internship**.*
